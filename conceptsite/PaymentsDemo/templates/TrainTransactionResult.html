@@ -1,0 +1,22 @@
+{% extends 'base_site.html' %}
+
+{% block branding %}
+<h1 id="site-name"><a href="{% url 'admin:index' %}">{{ site_header|default:_('Payments Demo - TrainingResult') }}</a></h1>
+{% endblock %}
+
+{% block breadcrumbs %}
+    <div class="breadcrumbs"> 
+    <table class='noBorder'><tr>
+    <td><a href="{% url 'admin:index' %}">Home</a></td>
+    <td><a href="{% url 'generateTrainingModel' %}">Go Back</a></td>
+    </tr>
+    </table> 
+    </div>
+{% endblock %}
+
+
+{% block content %}
+<div>
+<H1>{{msg}}</H1>
+</div>
+{% endblock %}

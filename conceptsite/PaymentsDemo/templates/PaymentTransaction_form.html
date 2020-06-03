@@ -1,0 +1,44 @@
+{% extends 'base_site.html' %}
+
+{% block branding %}
+<h1 id="site-name"><a href="{% url 'admin:index' %}">{{ site_header|default:_('Payments Demo - New Transaction') }}</a></h1>
+{% endblock %}
+
+{% block breadcrumbs %}
+    <div class="breadcrumbs"> 
+    <table class='noBorder'><tr>
+    <td><a href="{% url 'admin:index' %}">Home</a></td>
+    <td><a href="{% url 'generateTrainingModel' %}">Generate Training Model</a></td>
+    </tr>
+    </table> 
+    </div>
+{% endblock %}
+
+
+{% block content %}
+
+<div id="content-main">
+
+<p>Enter Details for testing your new Payment Transaction</p>
+
+
+<form method="post">{% csrf_token %}
+<div>
+	<fieldset class="module aligned wide">
+		<form method="POST" class="post-form" enctype="multipart/form-data">  
+		        {% csrf_token %}  
+			<div class="form-row">
+		        {{ form.as_p }}  
+			</div>
+			
+			<div class="submit-row">
+			        <button type="submit" class="default">Test</button>  
+			</div>
+		</form>  
+		
+	</fieldset>
+</div>
+
+
+{% endblock %}
+

@@ -1,0 +1,31 @@
+{% extends 'base_site.html' %}
+
+{% block branding %}
+<h1 id="site-name"><a href="{% url 'admin:index' %}">{{ site_header|default:_('Payments Demo - Training') }}</a></h1>
+{% endblock %}
+
+{% block breadcrumbs %}
+    <div class="breadcrumbs"> 
+    <table class='noBorder'><tr>
+    <td><a href="{% url 'admin:index' %}">Home</a></td>
+    <td><a href="{% url 'testPaymentTransaction' %}">Test Transaction</a></td>
+    </tr>
+    </table> 
+    </div>
+{% endblock %}
+
+
+{% block content %}
+
+<div>
+ <form action="" method="post">
+    {% csrf_token %}
+    <table>
+    {{ form.as_table }}
+    </table>
+    <input type="submit" value="Submit">
+  </form>
+<H1>{{msg}}</H1>
+</div>
+
+{% endblock %}

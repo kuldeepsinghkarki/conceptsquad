@@ -1,0 +1,22 @@
+{% extends 'base_site.html' %}
+
+{% block branding %}
+<h1 id="site-name"><a href="{% url 'admin:index' %}">{{ site_header|default:_('Payments Demo - Prediction') }}</a></h1>
+{% endblock %}
+
+{% block breadcrumbs %}
+    <div class="breadcrumbs"> 
+    <table class='noBorder'><tr>
+    <td><a href="{% url 'admin:index' %}">Home</a></td>
+    <td><a href="{% url 'testPaymentTransaction' %}">Try New Transaction</a></td>
+    </tr>
+    </table> 
+    </div>
+{% endblock %}
+
+{% block content %}
+<div>
+<H1>{{testMessage}} : {{plottedAt}}</H1>
+<img src="data:image/png;base64,{{modelImage}}" alt="Empty Trained Data" width=500 height=auto />
+<div>
+{% endblock %}
