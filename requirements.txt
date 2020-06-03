@@ -1,3 +1,4 @@
+--find-links wheelhouse
 asgiref==3.2.7
 cycler==0.10.0
 defusedxml==0.6.0
