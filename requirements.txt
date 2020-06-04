@@ -10,6 +10,7 @@ joblib==0.15.1
 kiwisolver==1.2.0
 MarkupPy==1.14
 matplotlib==3.2.1
+mysql-devel==8.0.17
 mysqlclient==1.4.6
 numpy==1.18.4
 odfpy==1.4.1
