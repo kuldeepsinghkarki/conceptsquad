@@ -1,6 +1,8 @@
+import tkinter
+import matplotlib
+#matplotlib.use("TkAgg")
 import matplotlib.pyplot as plt
 import matplotlib.font_manager
-import matplotlib
 import numpy as np
 import pickle
 from io import BytesIO
@@ -55,7 +57,7 @@ def getModelPlot(mymodel,modelRefData, scalar, pcaAnalyzer, newRecord):
                prop=matplotlib.font_manager.FontProperties(size=11))
     
     buf = BytesIO()
-    matplotlib.use("TkAgg")
+    matplotlib.use("Agg")
     plt.savefig(buf, format='png', dpi=300)
     image_base64 = base64.b64encode(buf.getvalue()).decode('utf-8').replace('\n', '')
     buf.close()
